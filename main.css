@@ -52,3 +52,6 @@ button{
 .show-rules .title-text{
     display: none;
 }
+.show-rules .start-btn{
+    display: none;
+}

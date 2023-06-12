@@ -1,3 +1,8 @@
+const correctAnswers = ['Uruguay', 'Jack Grealish', 'Pele', '91', 'Napoli', 'Cristiano Ronaldo'];
+const buttonElements = document.querySelectorAll('.answer');
+const proceedButton = document.getElementsByClassName('next-btn');
+let currentQuestion = 0;
+
 function toggleRules() {
     var rulesContent = document.querySelector('.rules-container-content');
     var quizComponent = document.querySelector('.quiz-component');
@@ -20,3 +25,30 @@ function startQuiz() {
     quizComponent.classList.toggle('show-quiz');
     questionDisplay.classList.toggle('show-quiz');
 }
+
+function checkAnswer() {
+    buttonElements.forEach(button => {
+        button.disabled = true;
+    });  
+
+    let pickedOption = this.value;
+    if (pickedOption === correctAnswers[currentQuestion]) {
+      this.style.backgroundColor = 'green';
+      this.style.color = 'white';
+    } else {
+        this.style.backgroundColor = 'red';
+        this.style.color = 'white';
+     // Find the correct answer button and make it green
+     buttonElements.forEach(button => {
+        if (button.value === correctAnswers[currentQuestion]) {
+          button.style.backgroundColor = 'green';
+        }
+      });
+    }
+    currentQuestion++;
+    proceedButton.disabled = false;
+}
+
+buttonElements.forEach(button => {
+  button.addEventListener('click', checkAnswer);
+});

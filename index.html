@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<html>
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,8 +20,19 @@
                 <p class="rules-text">After you finish the quiz, your score will be displayed at the end</p>
                 <p class="rules-text">Have fun playing!</p>
             </div>
+            <div class="question-format">
+                <h1 class="question-title">Question 1:</h1>                
+                <p class="question">Which country won the inaugural World Cup in 1930?</p>
+                <div class="button-grid">
+                    <button class="answer" value="England" onclick="checkAnswer()">England</button>
+                    <button class="answer" value="Uruguay" onclick="checkAnswer()">Uruguay</button>
+                    <button class="answer" value="Italy" onclick="checkAnswer()">Italy</button>
+                    <button class="answer" value="Brazil" onclick="checkAnswer()">Brazil</button>
+                </div>
+                <button class="next-btn">Next</button>
+            </div>
             
-            <button class="start-btn">Play now</button>
+            <button class="start-btn" onclick="startQuiz()">Play now</button>
             <button class="rules-btn" onclick="toggleRules()">How to play</button>
         </div>
     </main>

@@ -12,3 +12,11 @@ function toggleRules() {
       newButtonText.innerHTML = 'How to play';
     }
 }
+
+function startQuiz() {
+    var questionDisplay = document.querySelector('.question-format');
+    var quizComponent = document.querySelector('.quiz-component');
+
+    quizComponent.classList.toggle('show-quiz');
+    questionDisplay.classList.toggle('show-quiz');
+}

@@ -3,6 +3,8 @@
 body{
     background-color: white;
     font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
 .quiz-component{
@@ -23,6 +25,7 @@ button{
     border: 0;
     border-radius: 15px;
     display: inline-block;
+    cursor: pointer;
 
     color: white;
     font-weight: bolder;
@@ -33,9 +36,17 @@ button{
     background-color: #16425b;
 }
 
+.start-btn:hover{
+    background-color: #0f2e41;
+}
+
 .rules-btn{
     background-color: #d9dcd6;
     color:black;
+}
+
+.rules-btn:hover{
+    background-color: #caccc8;
 }
 
 .rules-text{
@@ -54,4 +65,45 @@ button{
 }
 .show-rules .start-btn{
     display: none;
+}
+
+.next-btn{
+    background-color: #16425b;
+}
+
+.question-format{
+    display: none;
+}
+
+.button-grid{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.answer{
+    background-color: #d9dcd6;
+    color: black;
+}
+
+.answer:hover{
+    background-color: #eceee9;
+}
+
+.show-quiz .start-btn{
+    display: none;
+}
+
+.show-quiz .rules-btn{
+    display: none;
+}
+
+.show-quiz .title-text{
+    display: none;
+}
+
+.show-quiz .question-format{
+    display: block;
+    text-align: center;
 }

@@ -37,3 +37,18 @@ button{
     background-color: #d9dcd6;
     color:black;
 }
+
+.rules-text{
+    font-size: 14px;
+}
+.rules-container-content{
+    display: none;
+}
+.show-rules .rules-container-content{
+    display: block;
+    text-align: left;
+    list-style-type: square;
+}
+.show-rules .title-text{
+    display: none;
+}

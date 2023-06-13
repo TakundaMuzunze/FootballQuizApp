@@ -1,4 +1,4 @@
-const correctAnswers = ['Uruguay', 'Jack Grealish', 'Pele', '91', 'Napoli', 'Cristiano Ronaldo'];
+const correctAnswers = ['Uruguay', 'Enzo Fernandez', 'Pele', '91', 'AC Milan', '90 Points', 'Real Madrid'];
 const buttonElements = document.querySelectorAll('.answer');
 const proceedButton = document.getElementsByClassName('next-btn');
 let currentQuestion = 0;
@@ -23,7 +23,7 @@ function startQuiz() {
     var quizComponent = document.querySelector('.quiz-component');
 
     quizComponent.classList.toggle('show-quiz');
-    questionDisplay.classList.toggle('show-quiz');
+    questionDisplay[0].classList.add('show-question');
 }
 
 function checkAnswer() {
@@ -52,3 +52,35 @@ function checkAnswer() {
 buttonElements.forEach(button => {
   button.addEventListener('click', checkAnswer);
 });
+
+
+
+// function nextQuestion() {
+//     const currentQuestionFormat = document.querySelectorAll('.question-format')[currentQuestion];
+//     currentQuestionFormat.classList.remove('show-question');
+  
+//     const nextQuestionFormat = document.querySelectorAll('.question-format')[currentQuestion + 1];
+//     if (nextQuestionFormat) {
+//       nextQuestionFormat.classList.add('show-question');
+//       currentQuestion++;
+//     } else {
+//       showCompletionMessage();
+//     }
+// }
+
+// proceedButton[0].addEventListener('click', nextQuestion);
+
+// function nextQuestion() {
+//     const currentQuestionFormat = document.querySelectorAll('.question-format')[currentQuestion];
+//     currentQuestionFormat.classList.remove('show-question');
+  
+//     const nextQuestionFormat = document.querySelectorAll('.question-format')[currentQuestion + 1];
+//     if (nextQuestionFormat) {
+//       nextQuestionFormat.classList.add('show-question');
+//       currentQuestion++;
+//     } else {
+//       showCompletionMessage();
+//     }
+//   }
+  
+//   proceedButton[0].addEventListener('click', nextQuestion);

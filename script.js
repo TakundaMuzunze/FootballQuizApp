@@ -1,6 +1,7 @@
-const correctAnswers = ['Uruguay', 'Enzo Fernandez', 'Pele', '91', 'AC Milan', '90 Points', 'Real Madrid'];
+const correctAnswers = ['Uruguay', 'Enzo Fernandez', 'Pele', '91', 'AC Milan', '90 Points', 'Real Madrid', 'Tom Wiese', 'Mainz', 'Gareth Barry', '1992/93'];
+const questionFormats = document.querySelectorAll('.question-format');
 const buttonElements = document.querySelectorAll('.answer');
-const proceedButton = document.getElementsByClassName('next-btn');
+const proceedButton = document.querySelector('.next-btn');
 let currentQuestion = 0;
 
 function toggleRules() {
@@ -27,26 +28,26 @@ function startQuiz() {
 }
 
 function checkAnswer() {
-    buttonElements.forEach(button => {
-        button.disabled = true;
-    });  
+  buttonElements.forEach(button => {
+    button.disabled = true;
+  });
 
-    let pickedOption = this.value;
-    if (pickedOption === correctAnswers[currentQuestion]) {
-      this.style.backgroundColor = 'green';
-      this.style.color = 'white';
-    } else {
-        this.style.backgroundColor = 'red';
-        this.style.color = 'white';
-     // Find the correct answer button and make it green
-     buttonElements.forEach(button => {
-        if (button.value === correctAnswers[currentQuestion]) {
-          button.style.backgroundColor = 'green';
-        }
-      });
-    }
-    currentQuestion++;
-    proceedButton.disabled = false;
+  let pickedOption = this.value;
+  if (pickedOption === correctAnswers[currentQuestion]) {
+    this.style.backgroundColor = 'green';
+    this.style.color = 'white';
+  } else {
+    this.style.backgroundColor = 'red';
+    this.style.color = 'white';
+    // Find the correct answer button and highlight it
+    buttonElements.forEach(correctButton => {
+      if (correctButton.value === correctAnswers[currentQuestion]) {
+        correctButton.style.backgroundColor = 'green';
+        correctButton.style.color = 'white';
+      }
+    });
+  }
+  proceedButton.disabled = false;
 }
 
 buttonElements.forEach(button => {
@@ -54,33 +55,15 @@ buttonElements.forEach(button => {
 });
 
 
+nextButton.addEventListener('click', nextQuestion);
 
-// function nextQuestion() {
-//     const currentQuestionFormat = document.querySelectorAll('.question-format')[currentQuestion];
-//     currentQuestionFormat.classList.remove('show-question');
-  
-//     const nextQuestionFormat = document.querySelectorAll('.question-format')[currentQuestion + 1];
-//     if (nextQuestionFormat) {
-//       nextQuestionFormat.classList.add('show-question');
-//       currentQuestion++;
-//     } else {
-//       showCompletionMessage();
-//     }
-// }
+function nextQuestion() {
+  questionFormats[currentQuestion].classList.add('hidden');
 
-// proceedButton[0].addEventListener('click', nextQuestion);
-
-// function nextQuestion() {
-//     const currentQuestionFormat = document.querySelectorAll('.question-format')[currentQuestion];
-//     currentQuestionFormat.classList.remove('show-question');
-  
-//     const nextQuestionFormat = document.querySelectorAll('.question-format')[currentQuestion + 1];
-//     if (nextQuestionFormat) {
-//       nextQuestionFormat.classList.add('show-question');
-//       currentQuestion++;
-//     } else {
-//       showCompletionMessage();
-//     }
-//   }
-  
-//   proceedButton[0].addEventListener('click', nextQuestion);
+  currentQuestion++;
+  if (currentQuestion < questionFormats.length) {
+    questionFormats[currentQuestion].classList.remove('hidden');
+  } else {
+    showCompletionMessage();
+  }
+}

@@ -107,3 +107,7 @@ button{
     display: block;
     text-align: center;
 }
+
+.question-format.hidden {
+    display: none;
+}

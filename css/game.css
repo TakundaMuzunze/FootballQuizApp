@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+/*--text: #0a1a18;
+--background: #e2f4f2;
+--primary-button: #4280a9;
+--secondary-button: #cccfeb;
+--accent: #252b5f;*/
+
+body{
+    background-color: white;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    color: #0a1a18;
+}
+
+.navigation-bar{
+    display: flex; 
+    justify-content: space-between;
+    align-items: center;
+    height: 40px;
+    padding: 10px 0;
+}
+
+.main-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-nav li{
+    font-weight: bolder;
+    list-style-type: none;
+    margin: 0 20px;
+}
+
+.nav-icons {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.nav-icons button{
+    width: 120px;
+    padding: 12px 32px;
+    background-color: #4280a9;
+    color: white;
+}
+
+h1{
+    margin-top: 0; 
+}
+
+.logo-text{
+  display: flex;
+  flex-direction: row;
+  margin-left: 20px;
+  color: #252b5f;
+}
+
+.logo img{
+    width: 32px;
+    height: 32px;
+}
+
+#hero{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #e2f4f2;
+    height: 100vh;
+}
+
+.hero-content {
+    text-align: center;
+}
+
+button{
+    font-size: 16px;
+    font-weight: bolder;
+    padding: 18px 36px;  
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 0;
+    display: inline-block;
+    cursor: pointer;   
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.quiz-component {
+  width: 500px; 
+  height: 400px;    
+  border-radius: 10px;
+  color: #0a1a18; 
+  background-color: #cccfeb;
+  position: relative;
+}
+
+.score {
+  color: #0a1a18;
+  font-weight: bolder;
+  position: absolute;
+  right: 20px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+ul li {
+  font-size: 1.2rem;
+  margin: 1rem 0;
+}
+
+ul li label {
+  cursor: pointer;
+}
+
+.options{
+  text-align: center;
+}
+
+.btn-option {
+  background-color: #4280a9;
+  color: white;
+  border: 1px solid #252b5f;
+  border-radius: 5px;
+  padding: 10px 24px;
+  width: 80%;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-option:hover {
+  background-color: white;
+  color: #1B4965;
+}
+
+.btn-option.selected {
+  background-color: white;
+  color: #1B4965;
+}
+
+.user-controls{
+  text-align: center;
+}
+
+.user-controls button {
+    margin-right: 10px;
+    display: block;
+    padding: 20px;
+    width: 100%;
+    font-size: 18px;
+    background-color: #252b5f;
+    color: white;
+    position: absolute;
+    top: 90%;
+}
+
+#question {
+  padding: 40px 10px;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+}

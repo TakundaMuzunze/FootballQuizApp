@@ -1,69 +1,159 @@
-const correctAnswers = ['Uruguay', 'Enzo Fernandez', 'Pele', '91', 'AC Milan', '90 Points', 'Real Madrid', 'Tom Wiese', 'Mainz', 'Gareth Barry', '1992/93'];
-const questionFormats = document.querySelectorAll('.question-format');
-const buttonElements = document.querySelectorAll('.answer');
-const proceedButton = document.querySelector('.next-btn');
-let currentQuestion = 0;
+const quiz = document.getElementById("quiz");
+const answerElements = document.querySelectorAll(".answer");
+const questionElement = document.getElementById("question");
+const a_text = document.getElementById("a_text");
+const b_text = document.getElementById("b_text");
+const c_text = document.getElementById("c_text");
+const d_text = document.getElementById("d_text");
+const submitButton = document.getElementById("submit-answers");
 
-function toggleRules() {
-    var rulesContent = document.querySelector('.rules-container-content');
-    var quizComponent = document.querySelector('.quiz-component');
-    var newButtonText = document.querySelector(".rules-btn");
+let currentQuiz = 0;
+let score = 0;
 
-    quizComponent.classList.toggle('show-rules');
-    rulesContent.classList.toggle('show-rules');
-  
-    if (rulesContent.classList.contains('show-rules')) {
-      newButtonText.innerHTML = 'Back';
-    } else {
-      newButtonText.innerHTML = 'How to play';
-    }
-}
+const questions = [
+  {
+    question: "Which country won the inaugural World Cup in 1930?",  
+    a: "England",  
+    b: "Italy",  
+    c: "Uruguay",  
+    d: "Brazil",
+    correct: "c",  
+  },
+  {
+    question: "How many goals did Lionel Messi score in his record-breaking 2011/12 season?",
+    a: "91",  
+    b: "86",  
+    c: "73",  
+    d: "92",  
+    correct: "a",
+  },
+  {
+    question: "Which players, with 653 games, has made the most Premier League appearances?",
+    a: "Ryan Giggs",
+    b: "Frank Lampard",
+    c: "Gareth Barry",
+    d: "James Milner",
+    correct: "c",
 
-function startQuiz() {
-    var questionDisplay = document.querySelector('.question-format');
-    var quizComponent = document.querySelector('.quiz-component');
-
-    quizComponent.classList.toggle('show-quiz');
-    questionDisplay[0].classList.add('show-question');
-}
-
-function checkAnswer() {
-  buttonElements.forEach(button => {
-    button.disabled = true;
+  },
+  {
+    question: "Which team in Italy has won the most UEFA Champions League titles?",
+    a: "Juventus", 
+    b: "Inter Milan", 
+    c: "AC Milan", 
+    d: "Sampdoria",
+    correct: "c",
+  },
+  {
+    question: "How many points did Arsenal achieve in their title winning 'Invincibles' season in 2003/04?",
+    a: "100 Points",
+    b: "88 Points",
+    c: "90 Points",
+    d: "95 Points",
+    correct: "c",
+  },
+  {
+    question: "Jurgen Klopp has managed two clubs in Germany including Borussia Dortmund and who?",
+    a: "Schalke 04",
+    b: "Mainz",
+    c: "Werder Bremen",
+    d: "RB Leipzig",
+    correct: "b",
+  },
+  {
+    question: "Who has won the most World Cup medals as a player?",
+    a: "Garrincha",
+    b: "Ronaldo Nazario",
+    c: "Pele",
+    d: "Gianluigi Buffon",
+    correct: "c",
+  },
+  {
+    question: "Which one of these European teams has not won the treble?",
+    a: "Real Madrid",
+    b: "Celtic",
+    c: "Bayern Munich",
+    d: "Ajax",
+    correct: "a",
+  },
+  {
+    question: "In which season was the first Premier League played?",
+    a: "1997/88",
+    b: "1988/89",
+    c: "1980/81",
+    d: "1992/93",
+    correct: "d",
+  },
+  {
+    question: "Can you name the former Germany international who went on to become a professional wrestler in the WWE?",
+    a: "Tom Wiese",
+    b: "Gerd Muller",
+    c: "Mesut Ozil",
+    d: "Miroslav Klose",
+    correct: "a",
+  }
+];
+const deselectAnswers = function() {
+  answerElements.forEach(function(answer) {
+    answer.checked = false;
   });
+};
 
-  let pickedOption = this.value;
-  if (pickedOption === correctAnswers[currentQuestion]) {
-    this.style.backgroundColor = 'green';
-    this.style.color = 'white';
-  } else {
-    this.style.backgroundColor = 'red';
-    this.style.color = 'white';
-    // Find the correct answer button and highlight it
-    buttonElements.forEach(correctButton => {
-      if (correctButton.value === correctAnswers[currentQuestion]) {
-        correctButton.style.backgroundColor = 'green';
-        correctButton.style.color = 'white';
+const selectedAnswer = function () {
+  let answer;
+  answerElements.forEach(function (answerElements){ 
+    if (answerElements.checked){
+      answer = answerElements.id;
+    }
+  });
+  return answer;
+}
+
+const startQuiz = function () {
+  deselectAnswers();
+  const currentQuizData = questions[currentQuiz];
+  questionElement.innerText = currentQuizData.question;
+  a_text.innerText = currentQuizData.a;
+  b_text.innerText = currentQuizData.b;
+  c_text.innerText = currentQuizData.c;
+  d_text.innerText = currentQuizData.d;
+}
+
+startQuiz();
+
+submitButton.addEventListener('click', function() {
+  const answer = selectedAnswer();
+  if (answer) {
+    if (answer === questions[currentQuiz].correct) {
+      score++;
+    }
+    currentQuiz++;
+    if (currentQuiz < questions.length) {
+      startQuiz();
+    } else {
+      const result = document.createElement('h2');
+      result.textContent = 'You answered ' + score + '/' + questions.length + ' questions correctly';
+
+      const message = document.createElement('p');
+      if (score === questions.length) {
+        message.innerHTML = "Congratulations! You got a perfect score!<br>You are a KickTrivia champion";
+      } else if (score >= questions.length / 2) {
+        message.textContent = "Great job! You have top level ball knowledge";
+      } else {
+        message.innerHTML = "Looks like you need to brush up on your football knowledge.<br> Keep playing and you'll get better!";
       }
-    });
-  }
-  proceedButton.disabled = false;
-}
 
-buttonElements.forEach(button => {
-  button.addEventListener('click', checkAnswer);
+      const playAgainButton = document.createElement('button');
+      playAgainButton.textContent = 'Play Again';
+      playAgainButton.classList.add('play-again-button');
+      playAgainButton.addEventListener('click', function() {
+        location.reload(); 
+      });
+
+      quiz.innerHTML = ''; 
+      quiz.appendChild(result);
+      quiz.appendChild(message);
+      quiz.appendChild(playAgainButton);
+    }
+  }
 });
-
-
-nextButton.addEventListener('click', nextQuestion);
-
-function nextQuestion() {
-  questionFormats[currentQuestion].classList.add('hidden');
-
-  currentQuestion++;
-  if (currentQuestion < questionFormats.length) {
-    questionFormats[currentQuestion].classList.remove('hidden');
-  } else {
-    showCompletionMessage();
-  }
-}

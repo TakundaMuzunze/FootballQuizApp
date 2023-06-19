@@ -158,3 +158,55 @@ a{
     position: absolute;
     top: 90%;
 }
+
+/*Responsive Media Queries*/
+@media (min-width: 320px) and (max-width: 479px){
+    .main-nav{
+        display: none;
+    }
+
+    .logo-text{
+        margin-top: 10px;
+    }
+
+    #hero p{
+        font-size: 16px;
+    }
+    #hero h1{
+        font-size: 24px;
+    }   
+    #hero{
+        flex-direction: column-reverse;
+        gap: 20px;
+    }
+    .hero-content{
+        text-align: center;
+        padding: 10px 20px;
+    }
+    .hero-image img{
+        width: 300px;
+        height: 300px;
+    }
+
+    .nav-icons{
+        display: none;
+    }
+
+    button{
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+
+    .start-btn{
+        width: 150px;
+    }
+    .rules-btn{
+        width: 150px;
+    }
+    .start-btn,
+    .rules-btn{
+        display: block;
+        text-align: center;
+        margin: 12px auto;
+    }
+}

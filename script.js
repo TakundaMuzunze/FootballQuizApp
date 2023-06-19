@@ -130,17 +130,29 @@ submitButton.addEventListener('click', function() {
     currentQuiz++;
     if (currentQuiz < questions.length) {
       startQuiz();
-    } else {
+    } 
+    else {
       const result = document.createElement('h2');
+      result.classList.add('heading-padding');
       result.textContent = 'You answered ' + score + '/' + questions.length + ' questions correctly';
 
       const message = document.createElement('p');
+      message.classList.add('message-padding');
+
+      const trophy = document.createElement('img');
+      trophy.classList.add('trophy-image');
+
       if (score === questions.length) {
-        message.innerHTML = "Congratulations! You got a perfect score!<br>You are a KickTrivia champion";
-      } else if (score >= questions.length / 2) {
+        trophy.src= '/images/gold-cup.png';
+        message.innerHTML += "Congratulations! You got a perfect score!<br>You are a KickTrivia champion";
+        
+      } else if (score > questions.length / 2) {
         message.textContent = "Great job! You have top level ball knowledge";
+        trophy.src= '/images/silver-cup.png';
+
       } else {
         message.innerHTML = "Looks like you need to brush up on your football knowledge.<br> Keep playing and you'll get better!";
+        trophy.src= '/images/bronze-cup.png';
       }
 
       const playAgainButton = document.createElement('button');
@@ -151,6 +163,7 @@ submitButton.addEventListener('click', function() {
       });
 
       quiz.innerHTML = ''; 
+      quiz.appendChild(trophy);
       quiz.appendChild(result);
       quiz.appendChild(message);
       quiz.appendChild(playAgainButton);

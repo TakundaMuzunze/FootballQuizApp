@@ -29,3 +29,4 @@ Experience the excitement of KickTrivia by trying out the live demo [here](https
 - HTML5
 - CSS3
 - JavaScript
+- Chrome Dev Tools

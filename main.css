@@ -128,8 +128,7 @@ a{
 }
 
 .rules-container{
-    width: 500px; 
-    height: 400px;    
+    width: 500px;     
     border-radius: 10px;
     color: #0a1a18; 
     background-color: #cccfeb;
@@ -138,6 +137,10 @@ a{
 
 .rules-content{
     padding: 5px 20px;
+}
+
+.rules-container ul{
+    padding-bottom: 30px;
 }
 
 .rules-container li{
@@ -208,5 +211,19 @@ a{
         display: block;
         text-align: center;
         margin: 12px auto;
+    }
+
+    .rules-container{
+        max-width: 300px;
+    }
+    .rules-content p,
+    .rules-container li{
+        font-size: 16px;
+    }
+    .rules-content{
+        font-size: 24px;
+    }
+    .previous{
+        font-size: 16px;
     }
 }

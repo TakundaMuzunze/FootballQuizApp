@@ -17,7 +17,7 @@ KickTrivia is a JavaScript-based quiz game that challenges users with 10 footbal
 
 ## 🚀 Live Demo
 
-Experience the excitement of KickTrivia by trying out the live demo [here](https://your-demo-url.com).
+Experience the excitement of KickTrivia by trying out the live demo [here](https://kicktrivia.netlify.app/).
 
 ## ⚙️ Installation
 
@@ -29,3 +29,4 @@ Experience the excitement of KickTrivia by trying out the live demo [here](https
 - HTML5
 - CSS3
 - JavaScript
+- Chrome Dev Tools

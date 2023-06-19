@@ -6,7 +6,7 @@
 --accent: #252b5f;*/
 
 body{
-    background-color: white;
+  background-color: white;
   font-family: 'Poppins', sans-serif;
   margin: 0;
   padding: 0;
@@ -159,6 +159,13 @@ ul li label {
   text-align: center;
 }
 
+.heading-padding{
+  padding: 0 20px;
+}
+.message-padding{
+  padding-bottom: 40px;
+}
+
 .play-again-button {
   margin-right: 10px;
   display: block;
@@ -171,3 +178,50 @@ ul li label {
   top: 90%;
 }
 
+.trophy-image{
+  width: 150px;
+  height: 150px;
+  display: block;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+/*Responsive Media Queries*/
+@media (min-width: 320px) and (max-width: 479px){
+  .main-nav{
+    display: none;
+  }
+
+  .logo-text{
+    margin-top: 10px;
+  }
+
+  .nav-icons{
+    display: none;
+  }
+
+  button{
+    font-size: 14px;
+    padding: 10px 20px;
+  }
+
+  .quiz-component{
+    max-width: 350px;
+  }
+  .rules-content p,
+  .quiz-component li{
+    font-size: 16px;
+  }
+  .rules-content{
+    font-size: 24px;
+  }
+  .quiz-component ul{
+    padding-bottom: 60px;
+  }
+  .previous{
+    font-size: 16px;
+  }
+  .quiz-component ul{
+  padding-bottom: 30px;
+  }
+}

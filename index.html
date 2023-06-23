@@ -13,6 +13,7 @@
             </div>
             <ul class="main-nav">
                 <li class="nav-links"><a href="/index.html">Home</a></li>
+                <li class="nav-links"><a href="#about">About</a></li>
                 <li class="nav-links"><a href="/index.html">Quizzes</a></li>
                 <li class="nav-links"><a href="/index.html">Rules</a></li>
             </ul>
@@ -27,7 +28,7 @@
             <h1>Welcome to KickTrivia</h1>
             <p>Put your ball knowledge to the test!</p>
             <p>Challenge yourself with our interactive quiz and become a trivia champion</p>
-            <a href="/pages/quiz-start.html"><button class="start-btn">Play now</button></a>
+            <a href="/pages/quiz-start.html"><button class="start-btn">Get started</button></a>
             <a href="/pages/how-to-play.html"><button class="rules-btn">How to play</button></a>
         </div>
         <div class="hero-image">
@@ -36,8 +37,122 @@
     </div>
     
     <main>
+        <section id="about">
+            <div class="heading-text">
+                <h2>About KickTrivia</h2>
+                <p>Discover the World of Football Trivia</p>
+            </div>
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="/images/stadium.png" alt="Football Stadium">
+                </div>
+                <div class="about-info">
+                    <h2>Explore the Fascinating World of Football Trivia</h2>
+                    <p>KickTrivia is an engaging and interactive football quiz that challenges your knowledge of the beautiful game. Test your football expertise across various categories and compete against friends or fellow football enthusiasts. With carefully crafted questions, stunning visuals, and a user-friendly interface, KickTrivia offers an immersive quiz experience that keeps you hooked from kickoff to the final whistle. Whether you're a die-hard fan or a casual follower, KickTrivia is the ultimate destination to showcase your football IQ and have a blast while doing it</p>
+                </div>
+            </div>           
+        </section>
+
+        <section id="features">
+            <div class="heading-text">
+                <h2>Exciting Features of KickTrivia</h2>
+                <p>Experience the Thrills of our Football Quiz</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <img src="/images/thought.png" alt="Thought Provoking Icon">
+                    <h4>Engaging Quiz Experience</h4>
+                    <p>Enjoy a fun and challenging football quiz with 10 thought-provoking questions.</p>
+                </div>
+                <div class="feature-item">
+                    <img src="/images/category.png" alt="category Icon">
+                    <h4>Multiple Categories</h4>
+                    <p>Explore various football categories, including leagues, competitions, history, and more</p>
+                </div>
+                <div class="feature-item">
+                    <img src="/images/scoreboard.png" alt="Scoreboard Icon">
+                    <h4>Score Display</h4>
+                    <p>Track your progress with a real-time score display during the quiz.</p>
+                </div>
+                <div class="feature-item">
+                    <img src="/images/graphics.png" alt="Visual Design Icon">
+                    <h4>Stunning Visuals</h4>
+                    <p> Immerse yourself in stunning visuals and captivating football imagery throughout the quiz experience.</p>
+                </div>               
+                <div class="feature-item">
+                    <img src="/images/feedback.png" alt="Feedback Icon">
+                    <h4>Score Feedback</h4>
+                    <p>Receive instant feedback on your score at the end of the quiz.</p>
+                </div>
+                <div class="feature-item">
+                    <img src="/images/quiz.png" alt="Multiple Choice Icon">
+                    <h4>Multiple Choice Answers</h4>
+                    <p>Test your knowledge with multiple choice answers that make the quiz accessible for all.</p>
+                </div>
+            </div>
+            <a href="/pages/quiz-start.html"><button class="start-btn">Play now</button></a>
+        </section>
+
+        <section id="faqs">
+            <div class="heading-text">
+                <h2>FAQs</h2>
+                <p>Get Clarifications on Game Rules, Features, and More</p>
+            </div>
+
+            <div class="faq-item" onclick="showMore(this)">
+                <h3>Q: How is the score calculated in the quiz?</h3>
+                <div class="toggle-content">
+                    <p>A: Each correct answer earns you 1 point. At the end of the quiz, your total score is calculated based on the number of correct answers you provided.</p>
+                </div>                
+            </div>
         
+            <div class="faq-item" onclick="showMore(this)">
+                <h3>Q: Can I change my answer after submitting?</h3>
+                <div class="toggle-content">
+                    <p>A: No, once you have submitted your answer, it cannot be changed. So make sure to review your answer before submitting it.</p>
+                </div>
+            </div>
+        
+            <div class="faq-item" onclick="showMore(this)">
+                <h3>Q: Are there any hints or lifelines available in the quiz?</h3>
+                <div class="toggle-content">
+                    <p>A: No, the quiz does not provide any hints or lifelines. It's a test of your knowledge and decision-making skills.</p>
+                </div>
+            </div>
+        
+            <div class="faq-item" onclick="showMore(this)">
+                <h3>Q: Can I see my score during the quiz?</h3>
+                <div class="toggle-content">
+                    <p>A: No, your score will be revealed at the end of the quiz once you have completed all the questions.</p>
+                </div>
+            </div>
+        
+            <div class="faq-item" onclick="showMore(this)">
+                <h3>Q: Can I retake the quiz?</h3>
+                <div class="toggle-content">
+                    <p>A: Yes, you can retake the quiz as many times as you like. Challenge yourself to improve your score with each attempt!</p>
+                </div>
+            </div>
+        
+            <!-- <div class="faq-item" onclick="showMore(this)">
+                <h3>Q: How many questions are there in the game?</h3>
+                <div class="toggle-content">
+                    <p>A: The game consists of a total of 10 questions. Answer them correctly to achieve the highest score.</p>
+                </div>
+            </div> -->
+        
+            <div class="faq-item" onclick="showMore(this)">
+                <h3>Q: Can I play the game on my mobile device?</h3>
+                <div class="toggle-content">
+                    <p>A: Yes, the game is fully compatible with mobile devices. You can play it on your smartphone or tablet.</p>
+                </div>
+            </div>
+        </section>
     </main>
+    <!-- <footer>
+        <h3>KickTrivia</h3>
+    </footer> -->
+
     <script src="script.js"></script>
 </body>
 </html>

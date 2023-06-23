@@ -1,6 +1,17 @@
+function showMore(click){
+  const toggle = document.querySelectorAll(".faq-item");
+}
+function showMore(item) {
+  const toggleContent = item.querySelector(".toggle-content");
+  toggleContent.classList.toggle("show");
+}
+
+
 const quiz = document.getElementById("quiz");
 const answerElements = document.querySelectorAll(".answer");
 const questionElement = document.getElementById("question");
+const userScoreElement = document.getElementById("user-score");
+const totalScoreElement = document.getElementById("total-score");
 const a_text = document.getElementById("a_text");
 const b_text = document.getElementById("b_text");
 const c_text = document.getElementById("c_text");
@@ -94,34 +105,46 @@ const questions = [
   }
 ];
 const deselectAnswers = function() {
-  answerElements.forEach(function(answer) {
-    answer.checked = false;
+  answerElements.forEach(function(answerElement) {
+    answerElement.classList.remove("selected");
   });
 };
 
-const selectedAnswer = function () {
+const selectedAnswer = function() {
   let answer;
-  answerElements.forEach(function (answerElements){ 
-    if (answerElements.checked){
-      answer = answerElements.id;
+  answerElements.forEach(function(answerElement) {
+    if (answerElement.classList.contains("selected")) {
+      answer = answerElement.id;
     }
   });
   return answer;
-}
+};
 
-const startQuiz = function () {
+const updateScore = function() {
+  userScoreElement.textContent = score;
+  totalScoreElement.textContent = questions.length;
+};
+
+const startQuiz = function() {
   deselectAnswers();
   const currentQuizData = questions[currentQuiz];
   questionElement.innerText = currentQuizData.question;
-  a_text.innerText = currentQuizData.a;
-  b_text.innerText = currentQuizData.b;
-  c_text.innerText = currentQuizData.c;
-  d_text.innerText = currentQuizData.d;
-}
+  answerElements.forEach(function(answerElement) {
+    answerElement.textContent = currentQuizData[answerElement.id];
+  });
+  updateScore();
+};
 
 startQuiz();
 
-submitButton.addEventListener('click', function() {
+answerElements.forEach(function(answerElement) {
+  answerElement.addEventListener("click", function() {
+    deselectAnswers();
+    answerElement.classList.add("selected");
+  });
+});
+
+submitButton.addEventListener("click", function() {
   const answer = selectedAnswer();
   if (answer) {
     if (answer === questions[currentQuiz].correct) {
@@ -130,43 +153,41 @@ submitButton.addEventListener('click', function() {
     currentQuiz++;
     if (currentQuiz < questions.length) {
       startQuiz();
-    } 
-    else {
-      const result = document.createElement('h2');
-      result.classList.add('heading-padding');
-      result.textContent = 'You answered ' + score + '/' + questions.length + ' questions correctly';
+    } else {
+      const result = document.createElement("h2");
+      result.classList.add("heading-padding");
+      result.textContent = "You answered " + score + "/" + questions.length + " questions correctly";
 
-      const message = document.createElement('p');
-      message.classList.add('message-padding');
+      const message = document.createElement("p");
+      message.classList.add("message-padding");
 
-      const trophy = document.createElement('img');
-      trophy.classList.add('trophy-image');
+      const trophy = document.createElement("img");
+      trophy.classList.add("trophy-image");
 
       if (score === questions.length) {
-        trophy.src= '/images/gold-cup.png';
+        trophy.src = "/images/gold-cup.png";
         message.innerHTML += "Congratulations! You got a perfect score!<br>You are a KickTrivia champion";
-        
       } else if (score > questions.length / 2) {
-        message.textContent = "Great job! You have top level ball knowledge";
-        trophy.src= '/images/silver-cup.png';
-
+        message.textContent = "Great job! You have top-level ball knowledge";
+        trophy.src = "/images/silver-cup.png";
       } else {
-        message.innerHTML = "Looks like you need to brush up on your football knowledge.<br> Keep playing and you'll get better!";
-        trophy.src= '/images/bronze-cup.png';
+        message.innerHTML = "Looks like you need to brush up on your football knowledge.<br> Keep playing, and you'll get better!";
+        trophy.src = "/images/bronze-cup.png";
       }
 
-      const playAgainButton = document.createElement('button');
-      playAgainButton.textContent = 'Play Again';
-      playAgainButton.classList.add('play-again-button');
-      playAgainButton.addEventListener('click', function() {
-        location.reload(); 
+      const playAgainButton = document.createElement("button");
+      playAgainButton.textContent = "Play Again";
+      playAgainButton.classList.add("play-again-button");
+      playAgainButton.addEventListener("click", function() {
+        location.reload();
       });
 
-      quiz.innerHTML = ''; 
+      quiz.innerHTML = "";
       quiz.appendChild(trophy);
       quiz.appendChild(result);
       quiz.appendChild(message);
       quiz.appendChild(playAgainButton);
     }
+    updateScore();
   }
 });

@@ -51,13 +51,6 @@ header{
     color: white;
 }
 
-/* .nav-icons button:hover{
-    background-color: white;
-    color: #1B4965;
-    border: 3px solid #1B4965;
-    transition: 0.2s;
-} */
-
 .logo-text h1{
     align-self: center; 
 }
@@ -73,6 +66,13 @@ header{
 .logo-text img{
     width: 48px;
     height: 48px;
+}
+
+.hamburger-icon{
+    display: none;
+    position: absolute;
+    right: 20px;
+    cursor: pointer;
 }
 
 #hero{
@@ -257,10 +257,30 @@ section{
 @media (min-width: 320px) and (max-width: 479px){
     .main-nav{
         display: none;
+        text-align: center;
+        padding: 20px;
+        background-color: white;
+        position: absolute;
+        top: 100%; /* Adjust the top position */
+        left: 0;
+        width: 100%;
+        z-index: 999; /* Ensure the menu appears above other elements */
+        margin-top: 0;
     }
-
-    .logo-text{
-        margin-top: 10px;
+    .main-nav li{       
+        margin: 15px auto;
+        margin-top: 40px;
+    }
+    .navigation-bar{
+        position: relative;
+    }
+    
+    .hamburger-icon{
+        display: block;
+    }
+    .active{
+        display: block;
+        height: auto;
     }
 
     #hero p{

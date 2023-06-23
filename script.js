@@ -1,6 +1,10 @@
-function showMore(click){
-  const toggle = document.querySelectorAll(".faq-item");
-}
+let mainNav = document.getElementById('nav-menu');
+let navBarToggle = document.getElementById('navbar-toggle');
+
+navBarToggle.addEventListener('click', function () {
+  mainNav.classList.toggle('active');
+});
+
 function showMore(item) {
   const toggleContent = item.querySelector(".toggle-content");
   toggleContent.classList.toggle("show");

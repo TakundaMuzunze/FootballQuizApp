@@ -6,13 +6,15 @@
 --accent: #252b5f;*/
 
 body{
-    background-color: white;
+    background-color: #e2f4f2;
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
+    scroll-behavior: smooth;
 }
 
 header{
+    background-color: white;
     color: #0a1a18;
 }
 
@@ -74,11 +76,9 @@ h1{
 
 #hero{
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
-
-    background-color: #e2f4f2;
-    height: 100vh;
+    min-height: 100vh;
 }
 
 .hero-content {
@@ -125,6 +125,96 @@ button{
 a{
     color: inherit;
     text-decoration: none;
+}
+
+section{
+    padding: 20px 0px;
+    min-height: 100vh;
+}
+
+.heading-text{
+    text-align: center
+}
+
+.heading-text h2{
+    font-size: 30px;
+}
+
+.heading-text p{
+    opacity: 75%;
+    font-size: 20px;
+    padding-bottom: 20px;
+}
+
+.about-content{
+    display: flex; 
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.about-image img{
+    width: 400px;
+    height: 400px;
+}
+
+.about-info{
+    max-width: 500px;
+}
+
+#features{
+    text-align: center;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    justify-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-bottom: 40px;
+}
+
+.feature-item img{
+    width: 48px;
+    height: 48px;
+    margin-top: 20px;
+    /* border-radius: 30px;
+    border: 2px solid #252b5f; */
+}
+
+.feature-item{
+    width: 300px;
+    padding: 10px 20px;
+    border: 0;
+    border-radius: 15px;
+    background-color: #cccfeb;
+    box-shadow: 3px 3px 3px 3px #cfcfcf;
+
+    text-align: center;
+}
+
+.faq-item{
+    background-color: #cccfeb;
+    border-radius: 15px;
+    padding: 10px 20px;
+    max-width: 1100px;
+    margin: 20px auto;
+    cursor: pointer;
+}
+
+.faq-item h3{
+    font-size: 22px;
+}
+
+.toggle-content{
+    display: none;
+}
+
+.toggle-content.show {
+    display: block;
 }
 
 .rules-container{
@@ -179,6 +269,8 @@ a{
         font-size: 24px;
     }   
     #hero{
+        height: 40vh;
+        justify-content: center;
         flex-direction: column-reverse;
         gap: 20px;
     }
@@ -187,8 +279,8 @@ a{
         padding: 10px 20px;
     }
     .hero-image img{
-        width: 300px;
-        height: 300px;
+        width: 250px;
+        height: 250px;
     }
 
     .nav-icons{
@@ -213,9 +305,46 @@ a{
         margin: 12px auto;
     }
 
+    .heading-text h2{
+        font-size: 24px;
+    }
+    .heading-text p{
+        font-size: 16px;
+    }
+
+    .about-content{
+        flex-direction: column;
+        justify-content: center;
+    }
+    .about-info{
+        text-align: center;
+        padding: 10px 20px;
+    }
+    .about-info h2{
+        display: none;
+    }
+    .about-info p{
+        font-size: 16px;
+    }
+    .about-image img{
+        width: 250px;
+        height: 250px;
+    }
+    .features-grid{
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .feature-item{
+        width: 250px;
+    }
+
+    .faq-item h3{
+        font-size: 18px;
+    }
+
     .rules-container{
         max-width: 350px;
     }
+
     .rules-content p,
     .rules-container li{
         font-size: 16px;
@@ -230,6 +359,45 @@ a{
         font-size: 16px;
     }
     .rules-container ul{
-    padding-bottom: 30px;
+        padding-bottom: 30px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1023px){
+    #hero{
+        height: 40vh;
+        padding: 0 20px;
+    }
+    .hero-image img{
+        width: 300px;
+        height: 300px;
+    }
+    #hero p{
+        font-size: 16px;
+    }
+    #hero h1{
+        font-size: 28px;
+    }   
+
+    .heading-text h2{
+        font-size: 24px;
+    }
+    .heading-text p{
+        font-size: 16px;
+    }
+
+    .about-image img{
+        width: 300px;
+        height: 300px;
+    }
+    .about-content{
+        padding: 0 20px;
+        gap: 20px;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .features-grid{
+        grid-template-columns: repeat(2, 1fr);       
     }
 }

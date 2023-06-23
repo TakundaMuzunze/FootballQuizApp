@@ -282,6 +282,9 @@ section{
         display: block;
         height: auto;
     }
+    .nav-icons{
+        display: none;
+    }
 
     #hero p{
         font-size: 16px;
@@ -302,11 +305,7 @@ section{
     .hero-image img{
         width: 250px;
         height: 250px;
-    }
-
-    .nav-icons{
-        display: none;
-    }
+    }    
 
     button{
         font-size: 14px;

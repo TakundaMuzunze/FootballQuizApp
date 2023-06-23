@@ -4,17 +4,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KickTrivia - Fun Footy Quiz</title>
     <link rel="stylesheet" type="text/css" href="/css/game.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
     <header>
         <nav class="navigation-bar">
+            <div class="hamburger-icon" id="navbar-toggle">
+                <i class="fa fa-bars" style="font-size:24px"></i>
+            </div>
             <div class="logo-text">
+                <img src="/images/football.png" alt="KickTrivia Logo">
                 <a href="/index.html"><h1>KickTrivia</h1></a>
             </div>
-            <ul class="main-nav">
+            <ul class="main-nav" id="nav-menu">
                 <li class="nav-links"><a href="/index.html">Home</a></li>
-                <li class="nav-links">Quizzes</li>
-                <li class="nav-links">Rules</li>
+                <li class="nav-links"><a href="#about">About</a></li>
+                <li class="nav-links"><a href="/index.html">Quizzes</a></li>
+                <li class="nav-links"><a href="/pages/how-to-play.html">Rules</a></li>
             </ul>
             <div class="nav-icons">
                 <button>Sign in</button>

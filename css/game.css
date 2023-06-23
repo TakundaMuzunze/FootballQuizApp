@@ -49,9 +49,30 @@ header{
   color: white;
 }
 
-h1{
-  margin-top: 0; 
+.logo-text h1{
+  align-self: center; 
 }
+
+.logo-text{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 15px;
+  margin-left: 20px;
+}
+
+.logo-text img{
+  width: 36px;
+  height: 36px;
+}
+
+.hamburger-icon{
+  display: none;
+  position: absolute;
+  right: 20px;
+  cursor: pointer;
+}
+
 
 h2{
   padding: 5px 10px;
@@ -65,17 +86,6 @@ p{
   font-size: 18px;
 }
 
-.logo-text{
-  display: flex;
-  flex-direction: row;
-  margin-left: 20px;
-  color: #252b5f;
-}
-
-.logo img{
-  width: 32px;
-  height: 32px;
-}
 
 #hero{
   display: flex;
@@ -204,12 +214,31 @@ ul li .answer.selected {
 @media (min-width: 320px) and (max-width: 479px){
   .main-nav{
     display: none;
+    text-align: center;
+    padding: 20px;
+    background-color: white;
+    position: absolute;
+    top: 100%; /* Adjust the top position */
+    left: 0;
+    width: 100%;
+    z-index: 999; /* Ensure the menu appears above other elements */
+    margin-top: 0;
   }
-
-  .logo-text{
-    margin-top: 10px;
+  .main-nav li{       
+    margin: 15px auto;
+    margin-top: 40px;
   }
-
+  .navigation-bar{
+    position: relative;
+  }
+    
+  .hamburger-icon{
+    display: block;
+  }
+  .active{
+    display: block;
+    height: auto;
+  }
   .nav-icons{
     display: none;
   }

@@ -110,6 +110,28 @@ header{
     font-size: 24px;
 }
 
+.hero-image img{
+    width: 400px;
+    height: 400px;
+}
+
+.random-btn{
+    background-color: #4280a9;
+    color: white;
+    width: 220px;
+    font-size: 18px;
+}
+
+.rules-btn{
+    background-color: #cccfeb;
+    width: 180px;
+    font-size: 18px;
+}
+
+.fa-random{
+    padding: 0 5px;
+}
+
 section{
     padding: 20px 0px;
 }
@@ -135,11 +157,12 @@ section{
     column-gap: 15px;
 }
 
-.tab-links{
+.tablinks{
     background-color: #cccfeb;
+    color: #0a1a18;
 }
 
-.active{
+.active-tab{
     color: white;
     background-color: #252b5f;;
 }
@@ -176,4 +199,81 @@ section{
     display: none;
 }
 
-/* @media (min-width: ) */
+@media (min-width: 320px) and (max-width: 480px){
+    .main-nav{
+        display: none;
+        text-align: center;
+        padding: 20px;
+        background-color: white;
+        position: absolute;
+        top: 100%; /* Adjust the top position */
+        left: 0;
+        width: 100%;
+        z-index: 999; /* Ensure the menu appears above other elements */
+        margin-top: 0;
+    }
+    .main-nav li{       
+        margin: 15px auto;
+        margin-top: 40px;
+    }
+    .navigation-bar{
+        position: relative;
+    }
+    
+    .hamburger-icon{
+        display: block;
+    }
+    .nav-icons{
+        display: none;
+    }
+
+    #hero p{
+        font-size: 16px;
+    }
+    #hero h1{
+        font-size: 24px;
+    }   
+    #hero{
+        height: 40vh;
+        justify-content: center;
+        flex-direction: column-reverse;
+        gap: 20px;
+    }
+    .hero-content{
+        text-align: center;
+        padding: 10px 20px;
+    }
+    .hero-image img{
+        width: 250px;
+        height: 250px;
+    }    
+
+    button{
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+
+    .heading-text{
+        padding: 0 20px;
+    }
+    .heading-text h2{
+        font-size: 24px;
+    }
+    .heading-text p{
+        font-size: 16px;
+    }
+
+    .category-cards {
+        flex-direction: column;
+    }
+    
+    .tabs{
+        flex-direction: row;
+        justify-content: flex-start;
+        overflow: scroll;
+    }
+    
+    #club-tab.tablinks{
+        width: 180px;
+    }
+}

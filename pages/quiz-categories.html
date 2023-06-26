@@ -33,11 +33,10 @@
             <h1>Explore our quiz categories</h1>
             <p>Test your sports knowledge and compete against others!</p>
             <p>Choose from a variety of categories such as leagues, competitions, history, and more</p>
-            <a href="/pages/quiz-start.html"><button class="start-btn">Get started</button></a>
-            <a href="/pages/how-to-play.html"><button class="rules-btn">How to play</button></a>
+            <a href="#"><button class="random-btn">Random Quiz<i class="fa fa-random"></i></button></a>
         </div>
         <div class="hero-image">
-            <img src="images/soccer-player.png" alt="Hero image">
+            <img src="/images/category-hero.png" alt="Hero image">
         </div>       
     </div>
     
@@ -50,17 +49,17 @@
 
             <div class="tabs">
                 <div class="tab">
-                    <button class="tablinks active" onclick=toggleTab(this)>Leagues</button>
+                    <button class="tablinks active-tab" onclick=toggleTab(this)>Leagues</button>
                 </div>
                 <div class="tab">
                     <button class="tablinks" onclick=toggleTab(this)>International</button>
                 </div>
                 <div class="tab">
-                    <button class="tablinks" onclick=toggleTab(this)>Club Competitions</button>
+                    <button class="tablinks" id="club-tab" onclick=toggleTab(this)>Club Competitions</button>
                 </div>
-                <div class="tab">
+                <!-- <div class="tab">
                     <button class="tablinks" onclick=toggleTab(this)>General Knowledge</button>
-                </div>
+                </div> -->
             </div>
 
             <div class="category-cards">

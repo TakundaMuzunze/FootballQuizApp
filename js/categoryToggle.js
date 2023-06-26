@@ -1,12 +1,12 @@
 function toggleTab(button) {
     const toggleButtons = document.querySelectorAll('.tablinks');
-    toggleButtons.forEach((btn) => btn.classList.remove('active'));
-    button.classList.add('active');
+    toggleButtons.forEach((btn) => btn.classList.remove('active-tab'));
+    button.classList.add('active-tab');
     categorySwitch();
   }
   
   function categorySwitch() {
-    const activeTab = document.querySelector('.tablinks.active').innerText;
+    const activeTab = document.querySelector('.tablinks.active-tab').innerText;
     const cards = document.querySelectorAll('.cat-card');
   
     cards.forEach((card) => {
@@ -20,5 +20,5 @@ function toggleTab(button) {
     });
 }
   
-toggleTab(document.querySelector('.tablinks.active'));
+toggleTab(document.querySelector('.tablinks.active-tab'));
   

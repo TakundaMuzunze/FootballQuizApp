@@ -129,7 +129,7 @@ header{
 }
 
 .fa-random{
-    padding: 0 5px;
+    padding-left: 10px;
 }
 
 section{
@@ -222,6 +222,10 @@ section{
     
     .hamburger-icon{
         display: block;
+    }
+    .active{
+        display: block;
+        height: auto;
     }
     .nav-icons{
         display: none;

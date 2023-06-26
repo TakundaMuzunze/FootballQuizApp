@@ -148,7 +148,7 @@ a {
 
 .quiz-component {
   width: 550px;    
-  border-radius: 10px;
+  border-radius: 15px;
   padding: 20px 0;
   margin: 0 auto;
   text-align: center;
@@ -158,8 +158,8 @@ a {
 }
 
 .quiz-component img{
-    width: 64px;
-    height: 64px;
+    width: 96px;
+    height: 96px;
     padding: 10px;
 }
 
@@ -302,10 +302,10 @@ ul li .answer.selected {
         text-align: center;
         padding: 10px 20px;
     }
-.hero-image img{
-    width: 400px;
-    height: 250px;
-}    
+    .hero-image img{
+        width: 400px;
+        height: 250px;
+    }    
 
 .start-btn{
     width: 150px;

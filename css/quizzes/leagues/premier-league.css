@@ -10,6 +10,7 @@ body{
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
+    scroll-behavior: smooth;
 }
 
 header{
@@ -146,6 +147,39 @@ a {
   text-decoration: none;
 }
 
+.rules-content{
+    width: 550px;    
+    border-radius: 15px;
+    border: 1px solid #252b5f;
+    padding: 20px 0;
+    margin: 0 auto;
+    text-align: center;
+    color: #0a1a18; 
+    background-color: #cccfeb;
+    position: relative;
+}
+
+.rules-content ul{
+  text-align: left;
+  padding: 0 20px;
+  list-style-type: circle;
+}
+
+#start-quiz{
+    background-color: #4280a9;
+    color: white;
+    width: 180px;
+    font-size: 18px;
+}
+#start-quiz:hover{
+  background-color: #252b5f;
+  transition: 0.2s;
+}
+
+#premier-league-quiz{
+  display: none;
+}
+
 .quiz-component {
   width: 550px;    
   border-radius: 15px;
@@ -156,7 +190,7 @@ a {
   background-color: #cccfeb;
   position: relative;
 }
-
+.rules-content img,
 .quiz-component img{
     width: 96px;
     height: 96px;
@@ -307,15 +341,6 @@ ul li .answer.selected {
         height: 250px;
     }    
 
-.start-btn{
-    width: 150px;
-}
-
-.start-btn{
-    display: block;
-    text-align: center;
-    margin: 12px auto;
-}
 
 .heading-text{
     padding: 0 20px;
@@ -327,11 +352,11 @@ ul li .answer.selected {
 .heading-text p{
     font-size: 16px;
 }
-
+  .rules-content,
   .quiz-component{
     max-width: 350px;
   }
-  .rules-content p,
+  .rules-content li,
   .quiz-component li{
     font-size: 16px;
   }

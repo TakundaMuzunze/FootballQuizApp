@@ -1,3 +1,13 @@
+const startQuizButton = document.getElementById("start-quiz");
+const rulesSection = document.getElementById("rules");
+const quizSection = document.getElementById("premier-league-quiz");
+
+startQuizButton.addEventListener("click", function() {
+  rulesSection.style.display = "none";
+  quizSection.style.display = "block";
+  startQuiz();
+});
+
 const quiz = document.getElementById("quiz");
 const answerElements = document.querySelectorAll(".answer");
 const questionElement = document.getElementById("question");

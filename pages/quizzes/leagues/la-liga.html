@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KickTrivia - La Liga Santander Quiz</title>
+    <link rel="stylesheet" type="text/css" href="/css/quizzes/leagues/la-liga.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <header>
+        <nav class="navigation-bar">
+            <div class="hamburger-icon" id="navbar-toggle">
+                <i class="fa fa-bars" style="font-size:24px"></i>
+            </div>
+            <div class="logo-text">
+                <img src="/images/football.png" alt="KickTrivia Logo">
+                <a href="/index.html"><h1>KickTrivia</h1></a>
+            </div>
+            <ul class="main-nav" id="nav-menu">
+                <li class="nav-links"><a href="/index.html">Home</a></li>
+                <li class="nav-links"><a href="#about">About</a></li>
+                <li class="nav-links"><a href="/pages/quiz-categories.html">Quizzes</a></li>
+                <li class="nav-links"><a href="/pages/how-to-play.html">Rules</a></li>
+            </ul>
+            <div class="nav-icons">
+                <button>Sign in</button>
+            </div>
+        </nav>
+    </header>
+
+    <div id="hero">
+        <div class="hero-content">
+            <h1>Discover the La Liga Quiz</h1>
+            <p>Test your knowledge about the La Liga!</p>
+            <p>Explore the rich history and skilled players of this top-tier Spanish football league</p>
+        </div>
+        <div class="hero-image">
+            <img src="/images/laliga.png" alt="Hero image">
+        </div>       
+    </div>
+
+    <main>
+        <section id="rules">
+            <div class="heading-text">
+                <h2>Quiz Rules</h2>
+                <p>Before you start the quiz, please read and understand the following rules:</p>
+            </div>
+            <div class="rules-content">
+                <img src="/images/rules.png" alt = "Game Rules Icon">
+                <h2>Game Rules</h2>
+                <ul>
+                    <li>The quiz consists of 10 multiple-choice questions with 4 possible answers</li>
+                    <li>Once you submit an answer, you cannot change it</li>
+                    <li>Your current score will be displayed during the quiz</li>
+                    <li>At the end of the quiz, you will see your final score</li>
+                    <li>You can choose to restart the quiz or exit to play another one</li>
+                </ul>
+                <div class="start-button">
+                    <button id="start-quiz">Begin Quiz</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="laliga-quiz">
+            <div class="heading-text">
+                <h2>La Liga Quiz Challenge</h2>
+                <p>Test your knowledge of La Liga history with a series of engaging questions</p>
+            </div>
+
+            <div class="quiz-component" id="quiz">
+                <div class="score">
+                    <span id="user-score">0</span>
+                    <span> / </span>
+                    <span id="total-score">0</span>
+                </div>
+                <img src="/images/laliga.png" alt="La Liga Icon">
+                <div class="question-content" id="question-area">
+                    <h2 id="question">Loading Quiz</h2>
+                    <ul>
+                        <li>
+                        <button type="button" name="answer" id="a" class="answer">Loading...</button>
+                        </li>
+                        <li>
+                        <button type="button" name="answer" id="b" class="answer">Loading...</button>
+                        </li>
+                        <li>
+                        <button type="button" name="answer" id="c" class="answer">Loading...</button>
+                        </li>
+                        <li>
+                        <button type="button" name="answer" id="d" class="answer">Loading...</button>
+                        </li>
+                    </ul>
+                    <div class="user-controls">
+                        <button class="submit" id ="submit-answers">Submit</button>                                               
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="/js/laligaquiz.js"></script>
+    <script src="/js/navigationBar.js"></script>
+</body>
+</html>

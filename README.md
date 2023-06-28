@@ -10,6 +10,7 @@ KickTrivia is a JavaScript-based quiz game that challenges users with 10 footbal
 
 ## ✨ Key Features
 
+- **🗂️ Multiple Categories**: Choose from different categories of football trivia to test your knowledge.
 - **📝 10 Football Questions**: Answer a series of football-related questions.
 - **🏆 Score Tracking**: Keep track of your score as you progress through the quiz.
 - **🔄 Restart**: Restart the quiz to test your football knowledge again.

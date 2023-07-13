@@ -1,6 +1,6 @@
 # KickTrivia
 
-⚽Fun and interactive football quiz game for any football fans to enjoy and try out
+⚽ Fun and interactive football quiz game for any football fans to enjoy and try out
 
 ![KickTrivia Preview](/images/preview.png)
 
